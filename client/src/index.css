@@ -1,8 +1,11 @@
+/* How to fix the inport warning? @import must precede all other statements besides @charset */
+/* https://stackoverflow.com/questions/58004095/warning-import-must-precede-all-other-statements-besides-charset */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap');
+@import url('https://rsms.me/inter/inter.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap');
-@import url('https://rsms.me/inter/inter.css');
 
 @tailwind base;
 @tailwind components;
