@@ -1,18 +1,28 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import state from '../store';
+import getContrastingColor from '../hooks/getContrastingColor';
 
-const CustomButtion = ({ type, title, customStyles, handleClick }) => {
+const CustomButtion = ({
+	type,
+	title,
+	customStyles,
+	handleClick
+}) => {
 	const snap = useSnapshot(state);
 	const generateStyles = type => {
 		switch (type) {
 			case 'filled':
 				return {
 					backgroundColor: snap.color,
-					color: 'white'
+					color: getContrastingColor(snap.color)
 				};
-			case 'outlined':
-				return 'bg-transparent border-2 border-black text-black';
+			case 'outline':
+				return {
+					borderWidth: '1px',
+					borderColor: snap.color,
+					color: getContrastingColor(snap.color)
+				};
 			default:
 				return 'bg-black text-white';
 		}

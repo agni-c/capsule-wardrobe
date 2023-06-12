@@ -14,14 +14,41 @@ const Shirt = () => {
 	// adding sticker on the model (Dcal)
 	const logoTexture = useTexture(snap.logoDecal);
 	const fullTexture = useTexture(snap.fullDecal);
+
+	useFrame((state, delta) =>
+		easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
+	);
+
+	// sometimes group doesn't update so we need to give it a key
+	const stateString = JSON.stringify(snap);
 	return (
-		<group>
+		<group key={snap}>
 			<mesh
 				castShadow
 				geometry={nodes.T_Shirt_male.geometry}
 				material={materials['lambert1']}
 				material-rougeness={0.1}
-				dispose={null}></mesh>
+				dispose={null}>
+				{snap.isFullTexture && (
+					<Decal
+						position={[0, 0, 0]}
+						rotation={[0, 0, 0]}
+						scale={1}
+						map={fullTexture}
+					/>
+				)}
+				{snap.isLogoTexture && (
+					<Decal
+						position={[0, 0.04, 0.15]}
+						rotation={[0, 0, 0]}
+						scale={0.15}
+						map={logoTexture}
+						map-anisotropy={16}
+						depthTest={false}
+						depthWrite={true}
+					/>
+				)}
+			</mesh>
 		</group>
 	);
 };
