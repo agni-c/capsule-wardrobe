@@ -3,7 +3,7 @@ import { proxy } from 'valtio'
 
 const state = proxy({
   intro: true,
-  color: 'black',
+  color: '#424651',
   isLogoTexture: true,
   isFullTexture: false,
   logoDecal: './threejs.png', // decal -> sticker
