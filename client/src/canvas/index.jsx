@@ -6,6 +6,7 @@ import CameraRig from './CameraRig';
 import Backdrop from './Backdrop';
 // https://stackoverflow.com/questions/66868663/jsconfig-json-gives-ts-errors?rq=1
 import Shirt from './Shirt';
+import ShirtAlt from './ShirtAlt';
 import { TshirtModel } from '../assets/models/TshirtModel';
 
 const CanvasModal = () => {
@@ -21,8 +22,9 @@ const CanvasModal = () => {
 			<CameraRig>
 				<Backdrop />
 				<Center>
-					{/* <Shirt /> */}
-					<TshirtModel />
+					<Shirt />
+					{/* <ShirtAlt /> */}
+					{/* <TshirtModel /> */}
 				</Center>
 			</CameraRig>
 		</Canvas>

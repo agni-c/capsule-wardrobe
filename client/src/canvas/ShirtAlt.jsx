@@ -7,7 +7,7 @@ import { Decal, useGLTF, useTexture } from '@react-three/drei';
 
 import state from '../store';
 
-const Shirt = () => {
+const ShirtAlt = () => {
 	const snap = useSnapshot(state);
 	const ref = useRef();
 	// importing 3d model (public path)
@@ -54,4 +54,4 @@ const Shirt = () => {
 	);
 };
 
-export default Shirt;
+export default ShirtAlt;
